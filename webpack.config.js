@@ -3,10 +3,13 @@ var path = require('path');
 
 module.exports = {
     entry: [
-      'webpack-dev-server/client?http://115.28.67.218:3000',
+      'webpack-dev-server/client?http://192.168.0.106:3000',
       'webpack/hot/only-dev-server',
       "./js/index.js"
     ],
+    resolve: {
+    extensions: ['', '.js', '.jsx']
+    },
     output: {
         path: __dirname + '/build',
         filename: "bundle.js"
@@ -14,6 +17,7 @@ module.exports = {
     module: {
       loaders:[
         { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel']},
+        { test: /\.jsx$/, exclude: /node_modules/, loaders: ['react-hot', 'babel']},
         {test: /\.css$/, loader: "style!css" },
         ]
     },
