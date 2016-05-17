@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import WeUI from 'react-weui';
 import {connect} from 'react-redux';
 import {fetchAppsByPageNumber} from '../actions/actions';
+import { browserHistory } from 'react-router';
 
 const {
 	Cells,
@@ -52,9 +53,14 @@ class App extends React.Component {
 		dispatch(fetchAppsByPageNumber(0))
 	}
 
+	handleButtonClick() {
+	// console.log('Button Click e : ', e);
+	browserHistory.push('/two');
+};
+
+
 	render() {
 		const {apps, isFetching} = this.props
-		console.log('posts--' + apps);
 		return (
 			<section>
 				<Toast icon="loading" show={isFetching}>
@@ -63,7 +69,7 @@ class App extends React.Component {
 				<CellsTitle>所有分组</CellsTitle>
 				<Cells access>
 					{apps.map((row, index) => (
-						<Cell className="list_item">
+						<Cell className="list_item" onClick={this.handleButtonClick}>
 							<CellHeader>
 								<img className="cover" src="http://mmrb.github.io/avatar/jf.jpg" alt=""/>
 							</CellHeader>

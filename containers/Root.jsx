@@ -7,6 +7,7 @@ import {Provider} from 'react-redux'
 import {Router, Route, browserHistory} from 'react-router'
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
 import reducers from '../reducers/reducers'
+import List from './List'
 
 const store = configureStore();
 
@@ -18,6 +19,7 @@ export default class Root extends Component {
 			<Provider store ={store}>
 				<Router history={history}>
 					<Route path="/" component={App}></Route>
+					<Route path="/two" component={List}></Route>
 				</Router>
 			</Provider>
 		);
