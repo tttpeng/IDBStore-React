@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import {  routerReducer } from 'react-router-redux'
 import { REQUEST_GROUPS,RECEIVE_GROUPS }  from '../actions/actions'
 
 function apps(state = {
@@ -52,6 +53,7 @@ function postsByPageNumaber(state = { }, action) {
 
 const rootReducer = combineReducers({
 	postsByPageNumaber,
+	routing: routerReducer
 })
 
 export default rootReducer
