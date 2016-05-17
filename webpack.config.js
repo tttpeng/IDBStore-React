@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
     entry: [
-      'webpack-dev-server/client?http://192.168.0.106:3000',
+      'webpack-dev-server/client?http://10.90.7.119:3000',
       'webpack/hot/only-dev-server',
       "./js/index.js"
     ],
