@@ -15,7 +15,7 @@ new WebpackDevServer(webpack(config), {
   //     changeOrigin: true,
   //     // secure: false
   //   }
-  // }
+  // } 
 
 }).listen(3000, '10.90.7.119', function (err, result) {
   if (err) {
